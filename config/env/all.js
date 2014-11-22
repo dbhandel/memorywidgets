@@ -15,6 +15,8 @@ module.exports = {
 			css: [
 				'public/lib/bootstrap/dist/css/bootstrap.css',
 				'public/lib/bootstrap/dist/css/bootstrap-theme.css',
+				'public/lib/angular-material/angular-material.css',
+				'public/lib/ng-tags-input/ng-tags-input.min.css'
 			],
 			js: [
 				'public/lib/angular/angular.js',
@@ -29,7 +31,8 @@ module.exports = {
 				'public/lib/angular-aria/angular-aria.js',
     		'public/lib/angular-animate/angular-animate.js',
     		'public/lib/hammerjs/hammer.js',
-    		'public/lib/angular-material/angular-material.js'
+    		'public/lib/angular-material/angular-material.js',
+    		'public/lib/ng-tags-input/ng-tags-input.min.js'
 			]
 		},
 		css: [

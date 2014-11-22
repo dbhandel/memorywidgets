@@ -6,12 +6,14 @@ angular.module('recalls').controller('RecallsController', ['$scope', '$statePara
 		$scope.authentication = Authentication;
 
 		// Create new Recall
-		$scope.create = function() {
+		this.create = function() {
 			// Create new Recall object
 			var recall = new Recalls ({
-				name: this.name
+				question: this.question,
+				answer: this.answer,
+				tags: this.tags
 			});
-
+			console.log(recall);
 			// Redirect after save
 			recall.$save(function(response) {
 				$location.path('recalls/' + response._id);

@@ -13,7 +13,8 @@
     "angular-material": "*",
     "angular-ui-router": "~0.2.12",
     "ui-bootstrap": "~0.12.0",
-		"angular-ui-utils": "~0.1.1",
-		"bootstrap": "~3"
+    "angular-ui-utils": "~0.1.1",
+    "bootstrap": "~3",
+    "ng-tags-input": "2.1.1"
   }
 }
