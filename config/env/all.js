@@ -16,7 +16,8 @@ module.exports = {
 				'public/lib/bootstrap/dist/css/bootstrap.css',
 				'public/lib/bootstrap/dist/css/bootstrap-theme.css',
 				'public/lib/angular-material/angular-material.css',
-				'public/lib/ng-tags-input/ng-tags-input.min.css'
+				'public/lib/ng-tags-input/ng-tags-input.min.css',
+				'public/lib/angular-material/themes/light-blue-dark-theme.css'
 			],
 			js: [
 				'public/lib/angular/angular.js',

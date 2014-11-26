@@ -1,9 +1,14 @@
 'use strict';
 
 // Recalls controller
-angular.module('recalls').controller('RecallsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Recalls',
-	function($scope, $stateParams, $location, Authentication, Recalls) {
+angular.module('recalls').controller('RecallsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Recalls', '$filter',
+	function($scope, $stateParams, $location, Authentication, Recalls, $filter) {
 		$scope.authentication = Authentication;
+
+		//check if user logged in
+		if(!Authentication.user) {
+			$location.path('signin');
+		}
 
 		// Create new Recall
 		this.create = function() {
@@ -16,7 +21,7 @@ angular.module('recalls').controller('RecallsController', ['$scope', '$statePara
 			console.log(recall);
 			// Redirect after save
 			recall.$save(function(response) {
-				$location.path('recalls/' + response._id);
+				$location.path('recalls');
 
 				// Clear form fields
 				$scope.name = '';
@@ -45,9 +50,9 @@ angular.module('recalls').controller('RecallsController', ['$scope', '$statePara
 		// Update existing Recall
 		$scope.update = function() {
 			var recall = $scope.recall;
-
+			console.log(recall);
 			recall.$update(function() {
-				$location.path('recalls/' + recall._id);
+				$location.path('recalls');
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});
@@ -64,5 +69,17 @@ angular.module('recalls').controller('RecallsController', ['$scope', '$statePara
 				recallId: $stateParams.recallId
 			});
 		};
+		$scope.studyList = function(searchQuery) {
+			var path = $location.path();
+			console.log(path);
+			if(path === '/study/due') {
+							//get due recalls but for now get all recalls ///sorted by date created
+						$scope.recalls = Recalls.query();
+			} else {
+				var query = path.split('/')[3];
+				$scope.recalls = Recalls.query();
+			}
+			//console.log($scope.recalls);
+		}
 	}
 ]);

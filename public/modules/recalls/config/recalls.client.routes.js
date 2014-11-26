@@ -20,6 +20,13 @@ angular.module('recalls').config(['$stateProvider',
 		state('editRecall', {
 			url: '/recalls/:recallId/edit',
 			templateUrl: 'modules/recalls/views/edit-recall.client.view.html'
-		});
-	}
+		}).
+		state('studyDue', {
+			url: '/study/due',
+			templateUrl: 'modules/recalls/views/study.client.view.html'
+		}).
+		state('studySearch', {
+			url: '/study/search/:query',
+			templateUrl: 'modules/recalls/views/study.client.view.html'
+		});	}
 ]);

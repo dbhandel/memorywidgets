@@ -23,7 +23,7 @@ var RecallSchema = new Schema({
 		trim: true
 	},
 		tags: {
-		type: [String]
+		type: [Schema.Types.Mixed]
 	},
 	created: {
 		type: Date,
